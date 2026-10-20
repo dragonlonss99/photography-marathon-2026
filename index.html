@@ -146,6 +146,18 @@ select{font:inherit;font-size:15px;padding:8px 10px;border-radius:8px;border:1px
 .checks input:checked + span{color:var(--muted);text-decoration:line-through}
 .reset{margin-top:14px}
 
+/* panel */
+.judges{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.judge{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.judge h3{margin:0;font-size:22px}
+.judge .who{font-size:14px;color:var(--muted);margin:4px 0 12px}
+.judge .who a{color:var(--muted)}
+.judge p{font-size:15px;line-height:1.7}
+.judge .likes{border-top:1px solid var(--line);padding-top:12px;margin:0}
+table.compact{min-width:0}
+.advice{max-width:44em;padding-left:1.4em}
+.advice li{margin-bottom:10px}
+
 footer{padding:40px 0 56px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 footer ul{padding-left:1.2em;margin:8px 0 0}
 </style>
@@ -156,6 +168,7 @@ footer ul{padding-left:1.2em;margin:8px 0 0}
   <div class="wrap">
     <a href="#rules">要注意的事</a>
     <a href="#judges">評審喜歡什麼</a>
+    <a href="#panel">今年評審</a>
     <a href="#themes">歷屆題目</a>
     <a href="#drill">抽題練習</a>
     <a href="#prep">準備清單</a>
@@ -244,6 +257,63 @@ footer ul{padding-left:1.2em;margin:8px 0 0}
       <li>刪掉大家都會想到的那個。</li>
       <li>選一種四張結構：重複框架、時間序列或對比。</li>
       <li>出發拍攝，最後留 45 分鐘挑片和交件。</li>
+    </ol>
+  </div>
+</section>
+
+<section id="panel">
+  <div class="wrap">
+    <h2>今年評審</h2>
+    <p class="lead">四位評審的路線幾乎不重疊：當代藝術攝影、街頭攝影、攝影書、人像。以下是從他們的作品和訪談推論出的偏好；評審的個人風格不等於評分標準，得獎也是四人共同討論的結果。</p>
+
+    <div class="judges">
+      <article class="judge">
+        <h3>陳敬寶</h3>
+        <p class="who">當代藝術攝影家，<a href="https://www.instagram.com/chinpaochen4793/" target="_blank" rel="noopener">@chinpaochen4793</a></p>
+        <p>代表作是檳榔西施紀實肖像《片刻濃妝》。後來的「迴返」計畫讓學生重新演出他觀察到的場景，用大型相機加棚燈營造劇場感；《天上人間》拍民宅旁的小廟與墳墓，《尋常人家》記錄台灣人的居家生活，常用兩聯到四聯的並置形式。</p>
+        <p class="likes"><strong>可能偏好：</strong>看得出台灣人怎麼生活的庶民場景、有意識的擺拍與戲劇性打光。他本身就做多張一組的作品，對四張是否構成整體大概最敏感。</p>
+      </article>
+      <article class="judge">
+        <h3>森爸</h3>
+        <p class="who">街頭攝影師，前 Leica 大中華區攝影導師，<a href="https://www.instagram.com/streets.framed/" target="_blank" rel="noopener">@streets.framed</a></p>
+        <p>拍了二十年台灣街頭，認為街頭攝影的迷人之處就是沒人演戲、全靠觀察與運氣。作品常讓人會心一笑，例如把等待活動的黑武士拍得格外孤單，或拍美術館裡人人舉著手機看畫。曾因西門町招牌太雜亂，乾脆把照片轉成黑白。</p>
+        <p class="likes"><strong>可能偏好：</strong>抓拍到的巧合、人與背景之間的反差和幽默、乾淨利落的構圖。台北街景太亂時，可以考慮轉黑白。</p>
+      </article>
+      <article class="judge">
+        <h3>蔡定邦</h3>
+        <p class="who">攝影書創作者，<a href="https://www.instagram.com/tsaitingbang/" target="_blank" rel="noopener">@tsaitingbang</a></p>
+        <p>台越混血、自學出身，以拍攝親哥哥的《本是同根生》拿下 2024 年巴黎光圈攝影書獎。新作《水噹噹的金雲阿姨》把一位 72 歲阿姨三十年前的舊照，和她現在自信自然的模樣並置。他說自己思考影像的邏輯比較接近電影。</p>
+        <p class="likes"><strong>可能偏好：</strong>有情感、有人與人關係的畫面，以及四張之間像電影一樣的節奏。今昔並置這類對比結構是他的強項；真的在生活的人，會比被擺弄的路人更能打動他。</p>
+      </article>
+      <article class="judge">
+        <h3>Karren Kao</h3>
+        <p class="who">人像攝影師，<a href="https://www.instagram.com/karren_kao/" target="_blank" rel="noopener">@karren_kao</a></p>
+        <p>本業拍婚紗、婚禮、形象和藝人，自稱不喜歡被風格侷限。2011 年的《仆街少女》系列紅遍全球，入選路透社年度經典照片集；也幫輔大愛狗社拍公益年曆，有一年的主題是巨大化的狗狗佔領校園。</p>
+        <p class="likes"><strong>可能偏好：</strong>一眼就懂、讓人會心一笑的概念，以及人物情緒自然的人像。她大概是四位裡最能欣賞荒謬但好玩點子的人。</p>
+      </article>
+    </div>
+
+    <h3>四位評審的交集</h3>
+    <div class="table-scroll">
+      <table class="compact">
+        <thead><tr><th scope="col">方向</th><th scope="col">誰會買單</th></tr></thead>
+        <tbody>
+          <tr><td>有人、有台灣庶民生活感</td><td>四位都會</td></tr>
+          <tr><td>四張有敘事或結構</td><td>陳敬寶、蔡定邦</td></tr>
+          <tr><td>幽默、反差、會心一笑</td><td>森爸、Karren</td></tr>
+          <tr><td>擺拍、戲劇性打光</td><td>陳敬寶、Karren</td></tr>
+          <tr><td>抓拍的決定性瞬間</td><td>森爸</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>對我們的建議</h3>
+    <ol class="advice">
+      <li><strong>畫面裡要有人。</strong>四位的作品幾乎都以人為核心。只有建築、光軌、101 夕陽這類空景，技術再好也很難打動這組評審。</li>
+      <li><strong>去庶民的地方拍。</strong>市場、宮廟、檳榔攤、早餐店、公園長輩，比觀光地標更對陳敬寶和蔡定邦的胃口。</li>
+      <li><strong>擺拍和抓拍可以混著用。</strong>擺拍打動陳敬寶和 Karren，抓拍打動森爸，同一組四張裡兩種手法可以並存。</li>
+      <li><strong>我們兩人本身就是素材。</strong>蔡定邦拍家人、Karren 拍伴侶，把兩人之間的關係放進作品，正是這組評審熟悉的語言，而且拍隊友不需要另外取得肖像授權。</li>
+      <li><strong>四張的編排要花心思。</strong>做多聯屏的陳敬寶和做攝影書的蔡定邦，對編排會特別敏感。</li>
     </ol>
   </div>
 </section>
@@ -366,6 +436,7 @@ footer ul{padding-left:1.2em;margin:8px 0 0}
     <ul>
       <li><a href="https://www.accupass.com/go/fyq24h22th" target="_blank" rel="noopener">2026 活動簡章（Accupass）</a></li>
       <li><a href="https://www.fayaque.com.tw/news/2026-24hphoto-faq" target="_blank" rel="noopener">2026 常見問題</a></li>
+      <li>評審資料：<a href="https://tcaaarchive.org/Artist/Work/6777" target="_blank" rel="noopener">陳敬寶（台灣當代藝術資料庫）</a>、<a href="https://www.twreporter.org/a/photo-1oneimage-art-chin-pao-chen" target="_blank" rel="noopener">陳敬寶專訪（報導者）</a>、<a href="https://smiletaiwan.cw.com.tw/article/8382" target="_blank" rel="noopener">森爸（微笑台灣）</a>、<a href="https://chewpeople.com.tw/2020-skm-ethan/" target="_blank" rel="noopener">森爸專訪</a>、<a href="https://www.verse.com.tw/article/tsai-ting-bang" target="_blank" rel="noopener">蔡定邦（VERSE）</a>、<a href="https://www.cna.com.tw/news/ahel/202510130331.aspx" target="_blank" rel="noopener">蔡定邦（中央社）</a>、<a href="https://www.wowlavie.com/article/ae2001826" target="_blank" rel="noopener">Karren Kao 專訪</a></li>
       <li>得獎作品：<a href="https://www.fayaque.com.tw/photography/2025/2025-first-prize" target="_blank" rel="noopener">2025 首獎</a>、<a href="https://www.fayaque.com.tw/photography/2025/2025-taipei-1" target="_blank" rel="noopener">2025 金獎</a>、<a href="https://www.fayaque.com.tw/photography/2025/2025-taipei-2" target="_blank" rel="noopener">2025 銀獎</a>、<a href="https://www.fayaque.com.tw/photography/2023/2023-first-prize" target="_blank" rel="noopener">2023 首獎</a></li>
     </ul>
   </div>

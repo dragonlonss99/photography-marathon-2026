@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>法雅客 24 小時攝影馬拉松攻略</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F3F5; --surface:#FFFFFF; --ink:#1C2230; --muted:#596175; --line:#D6D9E0;
+  --noon:#E8B53A; --dusk:#C2477A; --night:#2B3A7A; --dawn:#4E979F;
+  --on-noon:#1C2230; --on-dusk:#FFFFFF; --on-night:#FFFFFF; --on-dawn:#FFFFFF;
+  --focus:#2B3A7A;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121626; --surface:#1A2036; --ink:#E6E8EF; --muted:#A3AABD; --line:#2E3550;
+    --noon:#E8B53A; --dusk:#E0679A; --night:#8195E6; --dawn:#7CC3CC;
+    --on-noon:#121626; --on-dusk:#121626; --on-night:#121626; --on-dawn:#121626;
+    --focus:#8195E6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121626; --surface:#1A2036; --ink:#E6E8EF; --muted:#A3AABD; --line:#2E3550;
+  --noon:#E8B53A; --dusk:#E0679A; --night:#8195E6; --dawn:#7CC3CC;
+  --on-noon:#121626; --on-dusk:#121626; --on-night:#121626; --on-dawn:#121626;
+  --focus:#8195E6;
+  color-scheme: dark;
+}
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:17px; line-height:1.75;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC",serif;line-height:1.3;margin:0}
+h2{font-size:clamp(26px,4vw,34px);font-weight:900;margin-bottom:12px}
+h3{font-size:20px;font-weight:600;margin:28px 0 8px}
+p{margin:0 0 14px;max-width:40em}
+.lead{color:var(--muted);font-size:18px;max-width:36em}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.top a{flex:none;text-decoration:none;font-size:15px;padding:6px 12px;border-radius:999px;color:var(--muted)}
+nav.top a:hover{background:var(--surface);color:var(--ink)}
+
+/* hero */
+header.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:900;letter-spacing:.01em}
+.hero .when{margin-top:18px;font-size:18px}
+.hero .when strong{font-weight:700}
+.countdown{display:inline-block;margin-top:10px;font-size:15px;color:var(--muted)}
+.clock{margin-top:36px}
+.clock-bar{display:flex;height:84px;border-radius:10px;overflow:hidden}
+.seg{display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px;min-width:0}
+.seg b{font-size:15px;font-weight:700;white-space:nowrap}
+.seg span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s1{flex:4;background:var(--noon);color:var(--on-noon)}
+.s2{flex:5;background:var(--dusk);color:var(--on-dusk)}
+.s3{flex:9;background:var(--night);color:var(--on-night)}
+.s4{flex:4;background:var(--dawn);color:var(--on-dawn)}
+.clock-note{font-size:14px;color:var(--muted);margin-top:10px}
+@media (max-width:620px){
+  .clock-bar{flex-direction:column;height:auto}
+  .seg{flex:none;padding:12px 14px;flex-direction:row;justify-content:space-between;align-items:baseline;gap:12px}
+}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:20px}
+.rule{background:var(--surface);padding:18px 20px}
+.rule h4{margin:0 0 6px;font-size:16px;font-weight:700}
+.rule p{margin:0;font-size:15px;color:var(--muted)}
+ol.steps{padding-left:1.4em;max-width:40em}
+ol.steps li{margin-bottom:8px}
+
+/* judges */
+.point{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:22px 0;max-width:44em}
+.point .n{font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;line-height:1.1;color:var(--dusk)}
+.point h3{margin:0;grid-column:2}
+.point p{grid-column:2;margin:0}
+.structs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:16px 0 8px}
+.struct{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.struct h4{margin:0 0 4px;font-size:16px}
+.struct p{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.prints{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pr{aspect-ratio:3/2;border-radius:3px;background:var(--line);position:relative}
+.frame .pr::after{content:"";position:absolute;inset:18% 22%;border:2px solid var(--dusk);border-radius:2px}
+.seq .pr{background:linear-gradient(to top,var(--noon) var(--h),var(--line) var(--h))}
+.contrast .pr:nth-child(odd){background:var(--night)}
+.contrast .pr:nth-child(even){background:var(--noon)}
+
+/* themes table */
+.table-scroll{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:16px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+thead th{font-size:14px;font-weight:700;border-bottom:3px solid var(--line)}
+thead th.h1{border-bottom-color:var(--noon)}
+thead th.h2{border-bottom-color:var(--dusk)}
+thead th.h3{border-bottom-color:var(--night)}
+thead th.h4{border-bottom-color:var(--dawn)}
+td.yr{white-space:nowrap;color:var(--muted);font-size:15px}
+td.yr a{color:var(--muted)}
+.patterns{max-width:44em;padding-left:1.2em}
+.patterns li{margin-bottom:8px}
+
+/* drill */
+.drill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:20px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{font:inherit;font-size:15px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.theme-out{min-height:140px;display:flex;flex-direction:column;justify-content:center;border-radius:10px;padding:20px;background:var(--paper)}
+.theme-out .t{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(36px,8vw,60px);line-height:1.15}
+.theme-out .src{font-size:14px;color:var(--muted);margin-top:6px}
+.theme-out .empty{color:var(--muted)}
+.drill-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
+.btn{font:inherit;font-weight:700;font-size:16px;padding:10px 20px;border-radius:10px;border:0;background:var(--night);color:var(--on-night);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500}
+.timer{font-variant-numeric:tabular-nums;font-size:34px;font-weight:700;margin-left:auto}
+.timer.done{color:var(--dusk)}
+select{font:inherit;font-size:15px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+
+/* checklist */
+.checks{list-style:none;padding:0;margin:8px 0 0;max-width:44em}
+.checks li{border-bottom:1px solid var(--line)}
+.checks label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.checks input{width:20px;height:20px;margin-top:4px;flex:none;accent-color:var(--night)}
+.checks input:checked + span{color:var(--muted);text-decoration:line-through}
+.reset{margin-top:14px}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer ul{padding-left:1.2em;margin:8px 0 0}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="頁面導覽">
+  <div class="wrap">
+    <a href="#rules">要注意的事</a>
+    <a href="#judges">評審喜歡什麼</a>
+    <a href="#themes">歷屆題目</a>
+    <a href="#drill">抽題練習</a>
+    <a href="#prep">準備清單</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>城市 24 小時<br>攝影馬拉松攻略</h1>
+    <p class="when"><strong>11/7（六）09:30</strong> 兩人一起到新光三越信義新天地 A9 春水堂廣場報到，11:00 開賽，隔天 11:00 閉幕。</p>
+    <span class="countdown" id="countdown"></span>
+
+    <div class="clock" aria-label="比賽四個時段">
+      <div class="clock-bar">
+        <div class="seg s1"><b>11:00–15:00</b><span>第 1 段，正午硬光</span></div>
+        <div class="seg s2"><b>15:00–20:00</b><span>第 2 段，日落約 17:10</span></div>
+        <div class="seg s3"><b>20:00–05:00</b><span>第 3 段，九小時的夜</span></div>
+        <div class="seg s4"><b>05:00–09:00</b><span>第 4 段，日出約 06:10</span></div>
+      </div>
+      <p class="clock-note">每段開始才公布題目，每段交 4 張、全程 16 張，照片必須在該時段內拍攝。日出日落時間為約略值。</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="rules">
+  <div class="wrap">
+    <h2>要注意的事</h2>
+    <p class="lead">最容易出包的是交件流程，不是拍攝本身。只收 JPG、現場不轉 RAW、卡裡只能留 4 張，任何一項沒準備好，都會在截止前手忙腳亂。</p>
+
+    <div class="rules">
+      <div class="rule"><h4>只收 JPG</h4><p>每張 500 萬畫素以上，現場不轉 RAW，也不收 RAW。</p></div>
+      <div class="rule"><h4>卡裡只留 4 張</h4><p>存檔前把其他照片刪掉；只支援 SD 卡和 USB 隨身碟，不能用手機傳。</p></div>
+      <div class="rule"><h4>評審看 4x6 照片</h4><p>建議用 3:2 拍；細節太碎或偏暗的夜景，印出來會吃虧。</p></div>
+      <div class="rule"><h4>不能指定順序</h4><p>每張都要能單獨成立，不能靠排序說故事。</p></div>
+      <div class="rule"><h4>修圖可以，AI 不行</h4><p>後製不限，但禁止 AI 生成或 AI 後製。</p></div>
+      <div class="rule"><h4>器材限制</h4><p>不能用手機、空拍機、全景相機、運動相機拍攝。</p></div>
+      <div class="rule"><h4>肖像權</h4><p>拍到特定人物，要用主辦方的授權書取得同意，跟作品一起繳回。</p></div>
+      <div class="rule"><h4>著作財產權歸主辦方</h4><p>想自己留著用的畫面，另外多拍幾張不交件的版本。</p></div>
+    </div>
+
+    <h3>交件流程，賽前先決定並演練一次</h3>
+    <ol class="steps">
+      <li><strong>帶筆電：</strong>事先做好 2–3 組調色預設，讓同一組 4 張色調一致，再匯出到交件專用的卡。</li>
+      <li><strong>不帶筆電：</strong>用 RAW+JPG 拍，事先把相機的 JPG 風格調到能直接交件。Sony 機身不能機內轉 RAW，這條路一定要先調好。</li>
+    </ol>
+    <p>每段最後至少留 45 分鐘挑片、調色、存檔，截止前讀卡機通常會排隊。</p>
+
+    <h3>夜間那 9 小時</h3>
+    <p>建議凌晨 1–2 點前拍完夜間組，再找地方補眠 2–3 小時，起來趕 05:00 的集合點。捷運午夜收班，熬夜後不要騎車，深夜移動就搭計程車。</p>
+  </div>
+</section>
+
+<section id="judges">
+  <div class="wrap">
+    <h2>評審喜歡什麼</h2>
+    <p class="lead">這比賽比的是「四張一組」的切題創意，不是技術。以下是從 2023、2025 年首獎和金銀獎的創作說明歸納出來的規律。</p>
+
+    <div class="point"><span class="n">1</span><h3>刪掉第一直覺</h3>
+      <p>2025 首獎拍「疾速台北」時，認為追焦太容易雷同，直接不拍追焦。但金獎就是用追焦得獎的，靠的是清晰主體對比流動背景，並賦予意義。所以直覺題材不是不能拍，而是要換角度，或者拍到最好。</p></div>
+
+    <div class="point"><span class="n">2</span><h3>四張要像一組</h3>
+      <p>前幾名常用以下三種結構。</p></div>
+    <div class="structs">
+      <div class="struct frame"><h4>重複框架</h4>
+        <div class="prints" aria-hidden="true"><div class="pr"></div><div class="pr"></div><div class="pr"></div><div class="pr"></div></div>
+        <p>2025 金獎「食物肖像」：用橘色購物籃當畫框，拍出一系列超市靜物。</p></div>
+      <div class="struct seq"><h4>時間序列</h4>
+        <div class="prints" aria-hidden="true"><div class="pr" style="--h:90%"></div><div class="pr" style="--h:65%"></div><div class="pr" style="--h:40%"></div><div class="pr" style="--h:15%"></div></div>
+        <p>2025 首獎：霜淇淋從完整到融化。</p></div>
+      <div class="struct contrast"><h4>對比</h4>
+        <div class="prints" aria-hidden="true"><div class="pr"></div><div class="pr"></div><div class="pr"></div><div class="pr"></div></div>
+        <p>2025 銀獎「雙時界限」：廟宇屋脊和高樓在同一條街交會。</p></div>
+    </div>
+
+    <div class="point"><span class="n">3</span><h3>擺拍、買道具完全沒問題</h3>
+      <p>首獎的霜淇淋是熬夜累了在超商買來拍的；銀獎則把食物排得像拍團體照。</p></div>
+    <div class="point"><span class="n">4</span><h3>「有趣」比技術重要</h3>
+      <p>2025 首獎兩人一個偏對稱工整、一個偏隨機繪畫感，邊走邊交換視角。我們不需要拍得一樣，風格互補反而有利。</p></div>
+    <div class="point"><span class="n">5</span><h3>省體力</h3>
+      <p>2023 首獎已經連續參加 14 年，做法是穿好走的鞋、帶輕便器材和省電筆電，在巷弄裡慢慢走。</p></div>
+
+    <h3>拿到題目後的 15 分鐘</h3>
+    <ol class="steps">
+      <li>至少想出三個方向：字面的、隱喻的、純視覺形式的。</li>
+      <li>刪掉大家都會想到的那個。</li>
+      <li>選一種四張結構：重複框架、時間序列或對比。</li>
+      <li>出發拍攝，最後留 45 分鐘挑片和交件。</li>
+    </ol>
+  </div>
+</section>
+
+<section id="themes">
+  <div class="wrap">
+    <h2>歷屆題目</h2>
+    <p class="lead">題目常繞著固定幾類出：顏色、瞬間或速度、傳承、時間、食物、城市限定，以及夜間「不睡的人與地方」。題目順序是依官網得獎作品的排列與創作說明推斷的。</p>
+
+    <h3>四時段賽制，跟今年一樣</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th scope="col">年份</th>
+          <th scope="col" class="h1">第 1 段 11–15</th>
+          <th scope="col" class="h2">第 2 段 15–20</th>
+          <th scope="col" class="h3">第 3 段 20–05</th>
+          <th scope="col" class="h4">第 4 段 05–09</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2025" target="_blank" rel="noopener">2025 台北</a></td><td>密集之上</td><td>疾速台北</td><td>食物肖像</td><td>雙時界限</td></tr>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2024/2024-taipei-1" target="_blank" rel="noopener">2024 台北</a></td><td>一千分之一</td><td>四原色</td><td>時光隧道</td><td>白晝流星</td></tr>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2024/2024-kaohsiung-6" target="_blank" rel="noopener">2024 高雄</a></td><td>倒數0.01秒</td><td>第八道彩虹</td><td>瞬間火花</td><td>微光島嶼</td></tr>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2023/2023-first-prize" target="_blank" rel="noopener">2023 台北</a></td><td>城間漫步</td><td>人間煙火</td><td>秘密基地</td><td>大口呼吸</td></tr>
+          <tr><td class="yr"><a href="https://fayaque.com.tw/photography/2019/taipei-5" target="_blank" rel="noopener">2019 台北</a></td><td>台北限定</td><td>邁向傳承</td><td>無眠</td><td>一日之計</td></tr>
+          <tr><td class="yr"><a href="https://fayaque.com.tw/photography/2019/tainan-4" target="_blank" rel="noopener">2019 台南</a></td><td>台南限定</td><td>承襲幸福</td><td>與夜晚一起清醒</td><td>晨景</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>早期五時段賽制</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">年份</th><th scope="col">題目（依序）</th></tr></thead>
+        <tbody>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2018/first-prize" target="_blank" rel="noopener">2018</a></td><td>台北巷弄情、戲感、微光之夢、夜的驚嘆號、攝影師</td></tr>
+          <tr><td class="yr"><a href="https://fayaque.com.tw/photography/2017/first-prize" target="_blank" rel="noopener">2017</a></td><td>台北的笑容、熱情的夏日、美味的晚餐、夜行者、傳承幸福</td></tr>
+          <tr><td class="yr"><a href="https://www.fayaque.com.tw/photography/2016/first-prize" target="_blank" rel="noopener">2016</a></td><td>夏日絮語、小資世代向前衝、城市之眼、暗號、城市調色盤</td></tr>
+          <tr><td class="yr">2022</td><td>分回合賽制：夏日藍圖、幕後小故事、留白意境</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>出題規律</h3>
+    <ul class="patterns">
+      <li>同一年不同場次的題目會互相對應，例如 2024 台北「一千分之一」對應高雄「倒數0.01秒」，「四原色」對應「第八道彩虹」。</li>
+      <li>第 3 段幾乎都是夜晚題，第 4 段幾乎都是清晨題。</li>
+      <li>2016、2017 年的夏天題目是因為當年 8、9 月比賽；今年 11 月辦，這類題目應該不會出。</li>
+      <li>2020、2021 年官網找不到作品。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="drill">
+  <div class="wrap">
+    <h2>抽題練習</h2>
+    <p class="lead">從歷屆題庫抽一題，限時拍出一組 4 張，兩人各拍各的再互相挑片。盡量讓題目和時段對上：夜間題晚上練，清晨題早起練。</p>
+
+    <div class="drill">
+      <div class="filters" role="group" aria-label="篩選時段">
+        <button class="chip" data-f="all" aria-pressed="true">全部</button>
+        <button class="chip" data-f="day" aria-pressed="false">白天題</button>
+        <button class="chip" data-f="night" aria-pressed="false">夜間題</button>
+        <button class="chip" data-f="dawn" aria-pressed="false">清晨題</button>
+      </div>
+      <div class="theme-out" aria-live="polite" id="out"><span class="empty">按「抽一題」開始。</span></div>
+      <div class="drill-row">
+        <button class="btn" id="draw">抽一題</button>
+        <select id="mins" aria-label="練習時間">
+          <option value="60">60 分鐘</option>
+          <option value="90" selected>90 分鐘</option>
+          <option value="45">45 分鐘</option>
+        </select>
+        <button class="btn ghost" id="start">開始計時</button>
+        <button class="btn ghost" id="resetTimer">重設</button>
+        <span class="timer" id="timer" aria-live="off">90:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prep">
+  <div class="wrap">
+    <h2>準備清單</h2>
+    <p class="lead">打勾的狀態只會存在你自己的瀏覽器裡，對方看到的是他自己的進度。</p>
+
+    <h3>10/30 前</h3>
+    <ul class="checks" data-group="a">
+      <li><label><input type="checkbox"><span>一起抽題練習至少 2 次。</span></label></li>
+      <li><label><input type="checkbox"><span>決定交件流程（帶筆電或直出 JPG），並實際演練一次挑片、匯出、存卡要多久。</span></label></li>
+      <li><label><input type="checkbox"><span>挑幾張夜景沖成 4x6，看印出來會不會比螢幕暗。</span></label></li>
+      <li><label><input type="checkbox"><span>協調兩人的鏡頭焦段，長焦只要一個人帶。</span></label></li>
+      <li><label><input type="checkbox"><span>列台北備用地點：凌晨還醒著的（傳統市場、24 小時店、加油站），以及清晨的（早市、河濱、公園）。</span></label></li>
+    </ul>
+
+    <h3>器材</h3>
+    <ul class="checks" data-group="b">
+      <li><label><input type="checkbox"><span>電池至少 3 顆，加一顆能 PD 充電的行動電源（集合站不提供充電）。</span></label></li>
+      <li><label><input type="checkbox"><span>交件專用的小 SD 卡或 USB 隨身碟，加一個自己的讀卡機。</span></label></li>
+      <li><label><input type="checkbox"><span>小腳架。</span></label></li>
+      <li><label><input type="checkbox"><span>肖像授權書和筆。</span></label></li>
+      <li><label><input type="checkbox"><span>雨具，11 月東北季風常下雨。</span></label></li>
+      <li><label><input type="checkbox"><span>好走的鞋，以及凌晨穿的保暖外套。</span></label></li>
+    </ul>
+
+    <h3>11/5–11/6</h3>
+    <ul class="checks" data-group="c">
+      <li><label><input type="checkbox"><span>補眠。</span></label></li>
+      <li><label><input type="checkbox"><span>電池充飽、記憶卡格式化、交件卡清空。</span></label></li>
+      <li><label><input type="checkbox"><span>看天氣預報。</span></label></li>
+    </ul>
+    <button class="btn ghost reset" id="clearChecks">清除所有勾選</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    資料來源
+    <ul>
+      <li><a href="https://www.accupass.com/go/fyq24h22th" target="_blank" rel="noopener">2026 活動簡章（Accupass）</a></li>
+      <li><a href="https://www.fayaque.com.tw/news/2026-24hphoto-faq" target="_blank" rel="noopener">2026 常見問題</a></li>
+      <li>得獎作品：<a href="https://www.fayaque.com.tw/photography/2025/2025-first-prize" target="_blank" rel="noopener">2025 首獎</a>、<a href="https://www.fayaque.com.tw/photography/2025/2025-taipei-1" target="_blank" rel="noopener">2025 金獎</a>、<a href="https://www.fayaque.com.tw/photography/2025/2025-taipei-2" target="_blank" rel="noopener">2025 銀獎</a>、<a href="https://www.fayaque.com.tw/photography/2023/2023-first-prize" target="_blank" rel="noopener">2023 首獎</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // countdown
+  var start = new Date("2026-11-07T09:30:00+08:00");
+  var cd = document.getElementById("countdown");
+  var days = Math.ceil((start - new Date()) / 86400000);
+  if (days > 1) cd.textContent = "距離報到還有 " + days + " 天";
+  else if (days === 1) cd.textContent = "明天就是比賽日";
+  else cd.style.display = "none";
+
+  // theme bank
+  var bank = [
+    ["密集之上","2025 台北","day"],["疾速台北","2025 台北","day"],["食物肖像","2025 台北","night"],["雙時界限","2025 台北","dawn"],
+    ["一千分之一","2024 台北","day"],["四原色","2024 台北","day"],["時光隧道","2024 台北","night"],["白晝流星","2024 台北","dawn"],
+    ["倒數0.01秒","2024 高雄","day"],["第八道彩虹","2024 高雄","day"],["瞬間火花","2024 高雄","night"],["微光島嶼","2024 高雄","dawn"],
+    ["城間漫步","2023 台北","day"],["人間煙火","2023 台北","day"],["秘密基地","2023 台北","night"],["大口呼吸","2023 台北","dawn"],
+    ["台北限定","2019 台北","day"],["邁向傳承","2019 台北","day"],["無眠","2019 台北","night"],["一日之計","2019 台北","dawn"],
+    ["台南限定","2019 台南","day"],["承襲幸福","2019 台南","day"],["與夜晚一起清醒","2019 台南","night"],["晨景","2019 台南","dawn"],
+    ["台北巷弄情","2018","day"],["戲感","2018","day"],["微光之夢","2018","night"],["夜的驚嘆號","2018","night"],["攝影師","2018","dawn"],
+    ["台北的笑容","2017","day"],["美味的晚餐","2017","night"],["夜行者","2017","night"],["傳承幸福","2017","dawn"],
+    ["小資世代向前衝","2016","day"],["城市之眼","2016","day"],["暗號","2016","night"],["城市調色盤","2016","dawn"],
+    ["幕後小故事","2022","day"],["留白意境","2022","day"]
+  ];
+  var filter = "all", last = -1;
+  var chips = document.querySelectorAll(".chip");
+  chips.forEach(function(c){
+    c.addEventListener("click", function(){
+      filter = c.dataset.f;
+      chips.forEach(function(x){ x.setAttribute("aria-pressed", x === c ? "true" : "false"); });
+    });
+  });
+  var out = document.getElementById("out");
+  document.getElementById("draw").addEventListener("click", function(){
+    var pool = [];
+    bank.forEach(function(t, i){ if (filter === "all" || t[2] === filter) pool.push(i); });
+    if (pool.length > 1) pool = pool.filter(function(i){ return i !== last; });
+    var idx = pool[Math.floor(Math.random() * pool.length)];
+    last = idx;
+    var t = bank[idx];
+    var label = {day:"白天題", night:"夜間題", dawn:"清晨題"}[t[2]];
+    out.innerHTML = "";
+    var a = document.createElement("div"); a.className = "t"; a.textContent = t[0];
+    var b = document.createElement("div"); b.className = "src"; b.textContent = t[1] + "，" + label;
+    out.appendChild(a); out.appendChild(b);
+  });
+
+  // timer
+  var timerEl = document.getElementById("timer"), minsEl = document.getElementById("mins"), startBtn = document.getElementById("start");
+  var remaining = 90 * 60, tick = null;
+  function fmt(s){ var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? "0" : "") + m + ":" + (r < 10 ? "0" : "") + r; }
+  function render(){ timerEl.textContent = remaining > 0 ? fmt(remaining) : "時間到"; timerEl.classList.toggle("done", remaining <= 0); }
+  function stop(){ clearInterval(tick); tick = null; startBtn.textContent = "開始計時"; }
+  startBtn.addEventListener("click", function(){
+    if (tick) { stop(); startBtn.textContent = "繼續計時"; return; }
+    if (remaining <= 0) remaining = parseInt(minsEl.value, 10) * 60;
+    var end = Date.now() + remaining * 1000;
+    startBtn.textContent = "暫停";
+    tick = setInterval(function(){
+      remaining = Math.max(0, Math.round((end - Date.now()) / 1000));
+      render();
+      if (remaining <= 0) stop();
+    }, 250);
+  });
+  function resetTimer(){ stop(); remaining = parseInt(minsEl.value, 10) * 60; render(); }
+  document.getElementById("resetTimer").addEventListener("click", resetTimer);
+  minsEl.addEventListener("change", resetTimer);
+
+  // checklist persistence
+  var KEY = "fyq24-checklist";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".checks input"));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e) { saved = {}; }
+  boxes.forEach(function(b, i){
+    b.checked = !!saved[i];
+    b.addEventListener("change", function(){
+      saved[i] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+    });
+  });
+  document.getElementById("clearChecks").addEventListener("click", function(){
+    saved = {};
+    boxes.forEach(function(b){ b.checked = false; });
+    try { localStorage.removeItem(KEY); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
